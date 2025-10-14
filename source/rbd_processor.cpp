@@ -163,14 +163,20 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 						phase[j][i] -= PI2;
 					}
 					if(in_release[i]){
-						envelope_volume[j][i] -= 1 / (release[j] * data.processContext->sampleRate);
+						envelope_volume[j][i] -= osc_volume[j] / (release[j] * data.processContext->sampleRate);
 						if(envelope_volume[j][i] <= 0){
 							envelope_volume[j][i] = 0;
-							in_release[i] = false;
+							if(j == NUM_OSC - 1){
+								in_release[i] = false;
+								for(int k = 0; k < NUM_OSC; k++){
+									if(envelope_volume[k][i] > 0)
+										in_release[i] = true;
+								}
+							}
 						}
 					}
 					else if(envelope_volume[j][i] < osc_volume[j]){
-						envelope_volume[j][i] += 1 / (attack[j] * data.processContext->sampleRate);
+						envelope_volume[j][i] += osc_volume[j] / (attack[j] * data.processContext->sampleRate);
 						if(envelope_volume[j][i] > osc_volume[j])
 							envelope_volume[j][i] = osc_volume[j];
 					}
