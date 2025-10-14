@@ -18,9 +18,16 @@ CRubidiumProcessor::CRubidiumProcessor ()
 
 	// Initialize arrays
 	for(int i = 0; i < MAX_POLYPHONY; i++){
-		for(int j = 0; j < NUM_OSC; j++)
+		for(int j = 0; j < NUM_OSC; j++){
 			phase[j][i] = 0.f;
-		note_on[i] = false;
+			envelope_volume[j][i] = 0.f;
+		}
+		note_held[i] = false;
+		in_release[i] = false;
+	}
+	for(int i = 0; i < 10; i++){
+		attack[i] = 0.1;
+		release[i] = 0.1;
 	}
 }
 
@@ -107,8 +114,8 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 				switch(event.type){
 				case Vst::Event::kNoteOnEvent:
 					for(int i = 0; i < MAX_POLYPHONY; i++){
-						if(!note_on[i]){
-							note_on[i] = true;
+						if(!note_held[i] && !in_release[i]){
+							note_held[i] = true;
 							fund_freq[i] = 440.0f * powf(2.0f, (float)(event.noteOn.pitch - 69) / 12.f);
 							delta_angle[i] = PI2 * fund_freq[i] / data.processContext->sampleRate;
 							fVolume = 0.3f;
@@ -120,8 +127,9 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 					break;
 				case Vst::Event::kNoteOffEvent:
 					for(int i = 0; i < MAX_POLYPHONY; i++){
-						if(note_on[i] && fund_freq[i] == 440.f * powf(2.0f, (float)(event.noteOff.pitch - 69) / 12.f)){
-							note_on[i] = false;
+						if(note_held[i] && fund_freq[i] == 440.f * powf(2.0f, (float)(event.noteOff.pitch - 69) / 12.f)){
+							note_held[i] = false;
+							in_release[i] = true;
 							break;
 						}
 					}
@@ -147,12 +155,24 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 	while(--samples >= 0){		
 		Vst::Sample32 temp = 0.f;
 		for(int i = 0; i < MAX_POLYPHONY; i++){
-			if(note_on[i]){
+			if(note_held[i] || in_release[i]){
 				for(int j = 0; j < NUM_OSC; j++){
-					temp += osc_volume[j] * sin(phase[j][i]);
+					temp += envelope_volume[j][i] * sin(phase[j][i]);
 					phase[j][i] += delta_angle[i] * interval_ratios[j];
 					while(phase[j][i] > PI2){
 						phase[j][i] -= PI2;
+					}
+					if(in_release[i]){
+						envelope_volume[j][i] -= 1 / (release[j] * data.processContext->sampleRate);
+						if(envelope_volume[j][i] <= 0){
+							envelope_volume[j][i] = 0;
+							in_release[i] = false;
+						}
+					}
+					else if(envelope_volume[j][i] < osc_volume[j]){
+						envelope_volume[j][i] += 1 / (attack[j] * data.processContext->sampleRate);
+						if(envelope_volume[j][i] > osc_volume[j])
+							envelope_volume[j][i] = 0;
 					}
 				}
 			}
