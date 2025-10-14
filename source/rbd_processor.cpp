@@ -172,7 +172,7 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 					else if(envelope_volume[j][i] < osc_volume[j]){
 						envelope_volume[j][i] += 1 / (attack[j] * data.processContext->sampleRate);
 						if(envelope_volume[j][i] > osc_volume[j])
-							envelope_volume[j][i] = 0;
+							envelope_volume[j][i] = osc_volume[j];
 					}
 				}
 			}
