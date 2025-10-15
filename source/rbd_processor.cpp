@@ -26,8 +26,8 @@ CRubidiumProcessor::CRubidiumProcessor ()
 		in_release[i] = false;
 	}
 	for(int i = 0; i < 10; i++){
-		attack[i] = 0.1;
-		release[i] = 0.1;
+		attack[i] = 0.0;
+		release[i] = 0.05;
 	}
 }
 
