@@ -163,8 +163,9 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 						phase[j][i] -= PI2;
 					}
 					if(in_release[i]){
-						envelope_volume[j][i] -= osc_volume[j] / (release[j] * data.processContext->sampleRate);
-						if(envelope_volume[j][i] <= 0){
+						if(release[j] != 0)
+							envelope_volume[j][i] -= osc_volume[j] / (release[j] * data.processContext->sampleRate);
+						if(envelope_volume[j][i] <= 0 || release[j] == 0){
 							envelope_volume[j][i] = 0;
 							if(j == NUM_OSC - 1){
 								in_release[i] = false;
@@ -176,8 +177,9 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 						}
 					}
 					else if(envelope_volume[j][i] < osc_volume[j]){
-						envelope_volume[j][i] += osc_volume[j] / (attack[j] * data.processContext->sampleRate);
-						if(envelope_volume[j][i] > osc_volume[j])
+						if(attack[j] != 0)
+							envelope_volume[j][i] += osc_volume[j] / (attack[j] * data.processContext->sampleRate);
+						if(envelope_volume[j][i] > osc_volume[j] || attack[j] == 0)
 							envelope_volume[j][i] = osc_volume[j];
 					}
 				}
