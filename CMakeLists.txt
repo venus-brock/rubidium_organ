@@ -8,7 +8,7 @@ if(NOT vst3sdk_SOURCE_DIR)
 endif()
 
 project(Rubidium
-    VERSION 0.0.0
+    VERSION 0.1.0
     DESCRIPTION "Rubidium VST 3 Plug-in"
 )
 
