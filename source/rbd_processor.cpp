@@ -25,7 +25,7 @@ CRubidiumProcessor::CRubidiumProcessor ()
 		note_held[i] = false;
 		in_release[i] = false;
 	}
-	for(int i = 0; i < 10; i++){
+	for(int i = 0; i < NUM_OSC; i++){
 		attack[i] = 0.0;
 		release[i] = 0.05;
 	}
