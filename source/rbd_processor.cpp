@@ -24,7 +24,6 @@ CRubidiumProcessor::CRubidiumProcessor ()
 			adsr_stage[j][i] = -1;
 		}
 		note_on[i] = false;
-		in_release[i] = false;
 	}
 	for(int i = 0; i < NUM_OSC; i++){
 		attack[i] = 0.0;
@@ -167,26 +166,38 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 					while(phase[j][i] > PI2){
 						phase[j][i] -= PI2;
 					}
-					switch(adsr_stage[j][i])
-					if(in_release[i]){
-						if(release[j] != 0)
-							envelope_volume[j][i] -= osc_volume[j] / (release[j] * data.processContext->sampleRate);
-						if(envelope_volume[j][i] <= 0 || release[j] == 0){
-							envelope_volume[j][i] = 0;
-							if(j == NUM_OSC - 1){
-								in_release[i] = false;
-								for(int k = 0; k < NUM_OSC; k++){
-									if(envelope_volume[k][i] > 0)
-										in_release[i] = true;
-								}
-							}
-						}
-					}
-					else if(envelope_volume[j][i] < osc_volume[j]){
-						if(attack[j] != 0)
-							envelope_volume[j][i] += osc_volume[j] / (attack[j] * data.processContext->sampleRate);
-						if(envelope_volume[j][i] > osc_volume[j] || attack[j] == 0)
+					switch(adsr_stage[j][i]){
+					case 0: // attack
+						if(attack[j] == 0 || envelope_volume[j][i] >= osc_volume[i]){
 							envelope_volume[j][i] = osc_volume[j];
+							adsr_stage[j][i]++;
+							break;
+						}
+						envelope_volume[j][i] += osc_volume[j] / (attack[j] * data.processContext->sampleRate);
+						break;
+					case 1: // decay
+						if(decay[j] == 0 || envelope_volume[j][i] <= osc_volume[i] * sustain[j])
+							envelope_volume[j][i] = osc_volume[j] * sustain[j];
+							adsr_stage[j][i]++;
+							break;
+						envelope_volume[j][i] -= (osc_volume[j] - osc_volume[j] * sustain[j]) / (decay[j] * data.processContext->sampleRate);
+						break;
+					case 2: // sustain
+						envelope_volume[j][i] = osc_volume[j] * sustain[j];
+						break;
+					case 3: // release
+						if(release[j] == 0 || envelope_volume[j][i] <= 0){
+							envelope_volume[j][i] = 0;
+							adsr_stage[j][i] = -1;
+							note_on[i] = false;
+							for(int k = 0; k < NUM_OSC; k++){
+								if(adsr_stage[k][i] != -1)
+									note_on[i] = true;
+							}
+							break;
+						envelope_volume[j][i] -= (osc_volume[j] * sustain[j]) / (release[j] * data.processContext->sampleRate);
+						break;
+						}
 					}
 				}
 			}

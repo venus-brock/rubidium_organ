@@ -38,7 +38,14 @@ protected:
 	float phase[NUM_OSC][MAX_POLYPHONY];
 	float fund_freq[MAX_POLYPHONY];
 	float interval_ratios[NUM_OSC] = {1, 2, 3, 4, 6, 8, 10, 12};
+
+	// 0 - attack
+	// 1 - decay
+	// 2 - sustain
+	// 3 - release
+	// -1 - oscillator is not currently active for this note
 	int adsr_stage[NUM_OSC][MAX_POLYPHONY];
+
 	float attack[NUM_OSC];
 	float decay[NUM_OSC];
 	float sustain[NUM_OSC];
@@ -47,7 +54,6 @@ protected:
 	float fVolume = 0.3f;
 	float delta_angle[MAX_POLYPHONY];
 	bool note_on[MAX_POLYPHONY];
-	bool in_release[MAX_POLYPHONY];
 };
 
 #define PI2 (3.14159256f * 2.f)
