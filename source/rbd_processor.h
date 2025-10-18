@@ -38,12 +38,15 @@ protected:
 	float phase[NUM_OSC][MAX_POLYPHONY];
 	float fund_freq[MAX_POLYPHONY];
 	float interval_ratios[NUM_OSC] = {1, 2, 3, 4, 6, 8, 10, 12};
+	int adsr_stage[NUM_OSC][MAX_POLYPHONY];
 	float attack[NUM_OSC];
+	float decay[NUM_OSC];
+	float sustain[NUM_OSC];
 	float release[NUM_OSC];
 	float envelope_volume[NUM_OSC][MAX_POLYPHONY];
 	float fVolume = 0.3f;
 	float delta_angle[MAX_POLYPHONY];
-	bool note_held[MAX_POLYPHONY];
+	bool note_on[MAX_POLYPHONY];
 	bool in_release[MAX_POLYPHONY];
 };
 
