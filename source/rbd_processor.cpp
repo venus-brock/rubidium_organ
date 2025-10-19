@@ -195,9 +195,9 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 									note_on[i] = true;
 							}
 							break;
+						}
 						envelope_volume[j][i] -= (osc_volume[j] * sustain[j]) / (release[j] * data.processContext->sampleRate);
 						break;
-						}
 					}
 				}
 			}
