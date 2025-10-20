@@ -200,6 +200,11 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 						envelope_volume[j][i] -= (osc_volume[j] * sustain[j]) / (release[j] * data.processContext->sampleRate);
 						break;
 					}
+					if(envelope_volume[j][i] > osc_volume[j]){
+						// the envelope volume for any index should NEVER be greater than the relevant oscillator volume
+						// this fixes issues that may occur when oscillator volumes are changed during the run time of a note
+						delta_angle[i] = fund_freq[i] / data.processContext->sampleRate;
+					}
 				}
 			}
 		}
