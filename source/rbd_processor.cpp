@@ -150,7 +150,7 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 					break;
 				case Vst::Event::kNoteOffEvent:
 					for(int i = 0; i < MAX_POLYPHONY; i++){
-						if(note_on[i] && fund_freq[i] == 440.f * powf(2.0f, (float)(event.noteOff.pitch - 69) / 12.f)){
+						if(adsr_stage[0][i] != -1 && adsr_stage[0][i] != 3 && fund_freq[i] == 440.f * powf(2.0f, (float)(event.noteOff.pitch - 69) / 12.f)){
 							for(int j = 0; j < NUM_OSC; j++)
 								adsr_stage[j][i] = 3;
 							break;
