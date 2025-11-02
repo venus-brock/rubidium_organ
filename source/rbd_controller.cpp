@@ -69,7 +69,10 @@ tresult PLUGIN_API CRubidiumController::getState (IBStream* state)
 
 IPlugView* PLUGIN_API CRubidiumController::createView (FIDString name)
 {
-	return nullptr;
+	if(strcmp(name, Vst::ViewType::kEditor) == 0){
+		return new VSTGUI::VST3Editor(this, "view", "rbd_editor.uidesc");
+	}
+	return 0;
 }
 
 }
