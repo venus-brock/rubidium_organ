@@ -9,7 +9,7 @@
     </colors>
     <control-tags>
     </control-tags>
-    <template name="view" size="180, 350" background-color="#000000FF" minSize="180, 350" maxSize="180, 350" autosize="left right">
+    <template name="view" size="180, 350" background-color="#000000FF" minSize="180, 350" maxSize="180, 350">
 	<view class="CViewContainer" origin="0, 0" size="180, 350" background-color="#FF00FFFF" bitmap="background">
 	    <view class="CSlider" origin="43, 39" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
 	    <view class="CSlider" origin="43, 77" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
