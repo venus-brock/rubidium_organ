@@ -1,0 +1,9 @@
+Although according to the vstgui section of the VST3 docs on github.io, using XML for their uidesc files is deprecated, examples seem to only be provided for XML and not the preferred format, JSON. Not only this, but the VST3 project generator script automatically creates a uidesc file for you
+(should you choose to enable vstgui support) which also uses XML, as do most of the example plugins provided with the VST3 SDK (at least of the ones that include a gui). The only evidence I can even find that the JSON format is supported is that it's used by a total of 2 (by my count) of the example
+plugins, and it's what gets spat out by the inline gui editor, regardless of what format you've started with. All this is despite the version of vstgui that supposedly deprecated XML format uidesc files (4.10) being released about four years ago as of me writing this text (the version history on
+github only goes back as far as 4.10.1, which was released 2021-08-09). Nice going, Steinberg!
+
+Since I have been absolutely unable to make their inline gui editor work on my system (which is running Arch Linux and using Ardour as my VST3 host), I've been forced to write the uidesc file by hand. Since I have close to zero experience writing either XML or JSON, to me it seems like the obvious
+choice to use the option for which there is the most reference material provided by Steinberg, which is the supposedly deprecated XML.
+
+Another point of frustration I've had is that errors in your uidesc file will not be flagged (as far as I can tell) at the time of building the project, meaning I won't know I've done anything wrong until I've loaded my plugin in Ardour. This vertigo it doth bring.
