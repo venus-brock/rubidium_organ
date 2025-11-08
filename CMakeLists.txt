@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14.0)
 
 project(Rubidium
-    VERSION 0.2.1
+    VERSION 0.3.0
     DESCRIPTION "Rubidium VST 3 Plug-in"
 )
 
