@@ -20,21 +20,21 @@
 #pragma once
 
 enum{
-	kOsc1 = 100,
-	kOsc2 = 101,
-	kOsc3 = 102,
-	kOsc4 = 103,
-	kOsc5 = 104,
-	kOsc6 = 105,
-	kOsc7 = 106,
-	kOsc8 = 107
+	osc_1 = 0,
+	osc_2 = 1,
+	osc_3 = 2,
+	osc_4 = 3,
+	osc_5 = 4,
+	osc_6 = 5,
+	osc_7 = 6,
+	osc_8 = 7
 };
 
-#define default_Osc1 0.8
-#define default_Osc2 0.4
-#define default_Osc3 0.2
-#define default_Osc4 0.0
-#define default_Osc5 0.0
-#define default_Osc6 0.0
-#define default_Osc7 0.0
-#define default_Osc8 0.0
+#define default_osc_1 0.8
+#define default_osc_2 0.4
+#define default_osc_3 0.2
+#define default_osc_4 0.0
+#define default_osc_5 0.0
+#define default_osc_6 0.0
+#define default_osc_7 0.0
+#define default_osc_8 0.0

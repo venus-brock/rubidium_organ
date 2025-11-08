@@ -97,28 +97,28 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 				paramQueue->getPoint(numPoints - 1, sampleOffset, value);
 				switch (paramQueue->getParameterId ())
 				{
-				case kOsc1:
+				case osc_1:
 					osc_volume[0] = (float)value;
 					break;
-				case kOsc2:
+				case osc_2:
 					osc_volume[1] = (float)value;
 					break;
-				case kOsc3:
+				case osc_3:
 					osc_volume[2] = (float)value;
 					break;
-				case kOsc4:
+				case osc_4:
 					osc_volume[3] = (float)value;
 					break;
-				case kOsc5:
+				case osc_5:
 					osc_volume[4] = (float)value;
 					break;
-				case kOsc6:
+				case osc_6:
 					osc_volume[5] = (float)value;
 					break;
-				case kOsc7:
+				case osc_7:
 					osc_volume[6] = (float)value;
 					break;
-				case kOsc8:
+				case osc_8:
 					osc_volume[7] = (float)value;
 					break;
 				}
@@ -139,7 +139,6 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 							note_on[i] = true;
 							fund_freq[i] = 440.0f * powf(2.0f, (float)(event.noteOn.pitch - 69) / 12.f);
 							delta_angle[i] = PI2 * fund_freq[i] / data.processContext->sampleRate;
-							fVolume = 0.3f;
 							for(int j = 0; j < NUM_OSC; j++){
 								phase[j][i] = 0.f;
 								adsr_stage[j][i] = 0;
@@ -227,7 +226,7 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 				}
 			}
 		}
-		temp *= fVolume;
+		temp *= global_volume;
 		(*ptr_out_l++) = temp;
 		if(num_channels > 1)
 			(*ptr_out_r++) = temp;

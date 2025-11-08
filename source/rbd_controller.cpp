@@ -36,14 +36,14 @@ tresult PLUGIN_API CRubidiumController::initialize (FUnknown* context)
 		return result;
 	}
 
-	parameters.addParameter(STR16("OSC1"), nullptr, 0, default_Osc1, Vst::ParameterInfo::kCanAutomate, kOsc1);
-	parameters.addParameter(STR16("OSC2"), nullptr, 0, default_Osc2, Vst::ParameterInfo::kCanAutomate, kOsc2);
-	parameters.addParameter(STR16("OSC3"), nullptr, 0, default_Osc3, Vst::ParameterInfo::kCanAutomate, kOsc3);
-	parameters.addParameter(STR16("OSC4"), nullptr, 0, default_Osc4, Vst::ParameterInfo::kCanAutomate, kOsc4);
-	parameters.addParameter(STR16("OSC5"), nullptr, 0, default_Osc5, Vst::ParameterInfo::kCanAutomate, kOsc5);
-	parameters.addParameter(STR16("OSC6"), nullptr, 0, default_Osc6, Vst::ParameterInfo::kCanAutomate, kOsc6);
-	parameters.addParameter(STR16("OSC7"), nullptr, 0, default_Osc7, Vst::ParameterInfo::kCanAutomate, kOsc7);
-	parameters.addParameter(STR16("OSC8"), nullptr, 0, default_Osc8, Vst::ParameterInfo::kCanAutomate, kOsc8);
+	parameters.addParameter(STR16("OSC1"), nullptr, 0, default_osc_1, Vst::ParameterInfo::kCanAutomate, osc_1);
+	parameters.addParameter(STR16("OSC2"), nullptr, 0, default_osc_2, Vst::ParameterInfo::kCanAutomate, osc_2);
+	parameters.addParameter(STR16("OSC3"), nullptr, 0, default_osc_3, Vst::ParameterInfo::kCanAutomate, osc_3);
+	parameters.addParameter(STR16("OSC4"), nullptr, 0, default_osc_4, Vst::ParameterInfo::kCanAutomate, osc_4);
+	parameters.addParameter(STR16("OSC5"), nullptr, 0, default_osc_5, Vst::ParameterInfo::kCanAutomate, osc_5);
+	parameters.addParameter(STR16("OSC6"), nullptr, 0, default_osc_6, Vst::ParameterInfo::kCanAutomate, osc_6);
+	parameters.addParameter(STR16("OSC7"), nullptr, 0, default_osc_7, Vst::ParameterInfo::kCanAutomate, osc_7);
+	parameters.addParameter(STR16("OSC8"), nullptr, 0, default_osc_8, Vst::ParameterInfo::kCanAutomate, osc_8);
 	return result;
 }
 
