@@ -1,4 +1,4 @@
-# Rubidium Organ
+![](logo.png)
 
 Rubidium is a simple additive synthesizer plugin using VST3. Rubidium is still very early in development
 and thus is missing many key features, namely fully featured ADSR envelopes, customizable intervals between
