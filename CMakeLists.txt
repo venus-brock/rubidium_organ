@@ -56,8 +56,9 @@ target_link_libraries(Rubidium
     PRIVATE
         vstgui_support
 )
+
 smtg_target_add_plugin_resources(Rubidium
     RESOURCES
         "resource/rbd_editor.uidesc"
+	"resource/rbd_bg.png"
 )
-

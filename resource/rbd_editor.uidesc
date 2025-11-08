@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vstgui-ui-description version="1">
-
-	<template name="view" origin="0,0" size="800,180" background-color="FF00FF">
-	</template>
-
-	
-	<fonts>
-	</fonts>
-	<colors>
-	</colors>
-	<bitmaps/>
+    <bitmaps>
+	<bitmap name="background" path="rbd_bg.png"/>
+    </bitmaps>
+    <fonts>
+    </fonts>
+    <colors>
+    </colors>
+    <control-tags>
+    </control-tags>
+    <template name="view" size="180, 350" background-color="#000000FF" minSize="180, 350" maxSize="180, 350" autosize="left right">
+	<view class="CViewContainer" origin="0, 0" size="180, 350" background-color="#FF00FFFF" bitmap="background">
+	    <view class="CSlider" origin="43, 39" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
+	    <view class="CSlider" origin="43, 77" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
+	    <view class="CSlider" origin="43, 115" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
+	    <view class="CSlider" origin="43, 153" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
+	    <view class="CSlider" origin="43, 191" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
+	    <view class="CSlider" origin="43, 229" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
+	    <view class="CSlider" origin="43, 267" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
+	    <view class="CSlider" origin="43, 305" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
+	</view>
+    </template>
 </vstgui-ui-description>
