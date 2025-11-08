@@ -1,18 +1,13 @@
 cmake_minimum_required(VERSION 3.14.0)
 
-set(CMAKE_OSX_DEPLOYMENT_TARGET 10.12 CACHE STRING "")
-
-set(vst3sdk_SOURCE_DIR "./vst3sdk")
-if(NOT vst3sdk_SOURCE_DIR)
-    message(FATAL_ERROR "Path to VST3 SDK is empty!")
-endif()
-
 project(Rubidium
     VERSION 0.2.1
     DESCRIPTION "Rubidium VST 3 Plug-in"
 )
 
-set(SMTG_VSTGUI_ROOT "${vst3sdk_SOURCE_DIR}")
+set(CMAKE_OSX_DEPLOYMENT_TARGET 10.12 CACHE STRING "")
+
+set(vst3sdk_SOURCE_DIR "./vst3sdk")
 option(SMTG_ENABLE_VST3_PLUGIN_EXAMPLES OFF)
 add_subdirectory(${vst3sdk_SOURCE_DIR} ${PROJECT_BINARY_DIR}/vst3sdk)
 smtg_enable_vst3_sdk()
@@ -25,27 +20,6 @@ smtg_add_vst3plugin(Rubidium
     source/rbd_controller.h
     source/rbd_controller.cpp
     source/rbd_entry.cpp
-)
-
-if(SMTG_ENABLE_VSTGUI_SUPPORT)
-    target_sources(Rubidium
-        PRIVATE
-            resource/rbd_editor.uidesc
-    )
-    target_link_libraries(Rubidium
-        PRIVATE
-            vstgui_support
-    )
-    smtg_target_add_plugin_resources(Rubidium
-        RESOURCES
-            "resource/rbd_editor.uidesc"
-    )
-endif(SMTG_ENABLE_VSTGUI_SUPPORT)
-
-smtg_target_add_plugin_snapshots (Rubidium
-    RESOURCES
-        resource/33E2355296985690B55039E2E27F182C_snapshot.png
-        resource/33E2355296985690B55039E2E27F182C_snapshot_2.0x.png
 )
 
 target_link_libraries(Rubidium
@@ -77,3 +51,14 @@ elseif(SMTG_WIN)
         )
     endif()
 endif(SMTG_MAC)
+
+target_link_libraries(Rubidium
+    PRIVATE
+        vstgui_support
+)
+
+smtg_target_add_plugin_resources(Rubidium
+    RESOURCES
+        "resource/rbd_editor.uidesc"
+	"resource/rbd_bg.png"
+)
