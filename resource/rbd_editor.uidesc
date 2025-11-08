@@ -8,17 +8,25 @@
     <colors>
     </colors>
     <control-tags>
+	<control-tag name="osc_1" tag="0"/>
+	<control-tag name="osc_2" tag="1"/>
+	<control-tag name="osc_3" tag="2"/>
+	<control-tag name="osc_4" tag="3"/>
+	<control-tag name="osc_5" tag="4"/>
+	<control-tag name="osc_6" tag="5"/>
+	<control-tag name="osc_7" tag="6"/>
+	<control-tag name="osc_8" tag="7"/>
     </control-tags>
     <template name="view" size="180, 350" background-color="#000000FF" minSize="180, 350" maxSize="180, 350">
 	<view class="CViewContainer" origin="0, 0" size="180, 350" background-color="#FF00FFFF" bitmap="background">
-	    <view class="CSlider" origin="43, 39" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
-	    <view class="CSlider" origin="43, 77" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
-	    <view class="CSlider" origin="43, 115" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
-	    <view class="CSlider" origin="43, 153" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
-	    <view class="CSlider" origin="43, 191" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
-	    <view class="CSlider" origin="43, 229" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
-	    <view class="CSlider" origin="43, 267" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
-	    <view class="CSlider" origin="43, 305" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF"/>
+	    <view class="CSlider" origin="43, 39" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_1"/>
+	    <view class="CSlider" origin="43, 77" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_2"/>
+	    <view class="CSlider" origin="43, 115" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_3"/>
+	    <view class="CSlider" origin="43, 153" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_4"/>
+	    <view class="CSlider" origin="43, 191" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_5"/>
+	    <view class="CSlider" origin="43, 229" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_6"/>
+	    <view class="CSlider" origin="43, 267" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_7"/>
+	    <view class="CSlider" origin="43, 305" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_8"/>
 	</view>
     </template>
 </vstgui-ui-description>
