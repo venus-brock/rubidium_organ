@@ -53,7 +53,7 @@ public:
 protected:
 	static const int MAX_POLYPHONY = 16;
 	static const int NUM_OSC = 8;
-	float osc_volume[NUM_OSC] = {default_Osc1, default_Osc2, default_Osc3, default_Osc4, default_Osc5, default_Osc6, default_Osc7, default_Osc8};
+	float osc_volume[NUM_OSC] = {default_osc_1, default_osc_2, default_osc_3, default_osc_4, default_osc_5, default_osc_6, default_osc_7, default_osc_8};
 	float phase[NUM_OSC][MAX_POLYPHONY];
 	float fund_freq[MAX_POLYPHONY];
 	float interval_ratios[NUM_OSC] = {1, 2, 3, 4, 6, 8, 10, 12};
@@ -70,7 +70,7 @@ protected:
 	float sustain[NUM_OSC];
 	float release[NUM_OSC];
 	float envelope_volume[NUM_OSC][MAX_POLYPHONY];
-	float fVolume = 0.3f;
+	float global_volume = 0.1;
 	float delta_angle[MAX_POLYPHONY];
 	bool note_on[MAX_POLYPHONY];
 };
