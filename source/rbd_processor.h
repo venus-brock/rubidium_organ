@@ -20,7 +20,7 @@
 #pragma once
 
 #include "public.sdk/source/vst/vstaudioeffect.h"
-#include "params.h"
+#include "defaults.h"
 
 namespace brock {
 
@@ -51,8 +51,6 @@ public:
 	Steinberg::tresult PLUGIN_API getState (Steinberg::IBStream* state) SMTG_OVERRIDE;
 
 protected:
-	static const int MAX_POLYPHONY = 16;
-	static const int NUM_OSC = 8;
 	float osc_volume[NUM_OSC] = {default_osc_1, default_osc_2, default_osc_3, default_osc_4, default_osc_5, default_osc_6, default_osc_7, default_osc_8};
 	float phase[NUM_OSC][MAX_POLYPHONY];
 	float fund_freq[MAX_POLYPHONY];

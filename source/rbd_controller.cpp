@@ -22,7 +22,7 @@
 #include "vstgui/plugin-bindings/vst3editor.h"
 #include "pluginterfaces/base/ibstream.h"
 #include "base/source/fstreamer.h"
-#include "params.h"
+#include "defaults.h"
 
 using namespace Steinberg;
 
@@ -36,14 +36,23 @@ tresult PLUGIN_API CRubidiumController::initialize (FUnknown* context)
 		return result;
 	}
 
-	parameters.addParameter(STR16("OSC1"), nullptr, 0, default_osc_1, Vst::ParameterInfo::kCanAutomate, osc_1);
-	parameters.addParameter(STR16("OSC2"), nullptr, 0, default_osc_2, Vst::ParameterInfo::kCanAutomate, osc_2);
-	parameters.addParameter(STR16("OSC3"), nullptr, 0, default_osc_3, Vst::ParameterInfo::kCanAutomate, osc_3);
-	parameters.addParameter(STR16("OSC4"), nullptr, 0, default_osc_4, Vst::ParameterInfo::kCanAutomate, osc_4);
-	parameters.addParameter(STR16("OSC5"), nullptr, 0, default_osc_5, Vst::ParameterInfo::kCanAutomate, osc_5);
-	parameters.addParameter(STR16("OSC6"), nullptr, 0, default_osc_6, Vst::ParameterInfo::kCanAutomate, osc_6);
-	parameters.addParameter(STR16("OSC7"), nullptr, 0, default_osc_7, Vst::ParameterInfo::kCanAutomate, osc_7);
-	parameters.addParameter(STR16("OSC8"), nullptr, 0, default_osc_8, Vst::ParameterInfo::kCanAutomate, osc_8);
+	// apparently we need to use utf-16
+	char16_t param_names[40][10] = {
+		u"osc_1", u"osc_2", u"osc_3", u"osc_4", u"osc_5", u"osc_6", u"osc_7", u"osc_8",
+		u"osc_1_a", u"osc_2_a", u"osc_3_a", u"osc_4_a", u"osc_5_a", u"osc_6_a", u"osc_7_a", u"osc_8_a",
+		u"osc_1_d", u"osc_2_d", u"osc_3_d", u"osc_4_d", u"osc_5_d", u"osc_6_d", u"osc_7_d", u"osc_8_d",
+		u"osc_1_s", u"osc_2_s", u"osc_3_s", u"osc_4_s", u"osc_5_s", u"osc_6_s", u"osc_7_s", u"osc_8_s",
+		u"osc_1_r", u"osc_2_r", u"osc_3_r", u"osc_4_r", u"osc_5_r", u"osc_6_r", u"osc_7_r", u"osc_8_r"
+	};
+
+	float default_osc_volumes[8] = {
+	    default_osc_1, default_osc_2, default_osc_3, default_osc_4, default_osc_5, default_osc_6, default_osc_7, default_osc_8
+	};
+
+	for(int i = 0; i < 8; i++){
+		parameters.addParameter(param_names[i], nullptr, 0, default_osc_volumes[i], Vst::ParameterInfo::kCanAutomate, i);
+	}
+
 	return result;
 }
 

@@ -45,10 +45,10 @@ CRubidiumProcessor::CRubidiumProcessor ()
 		note_on[i] = false;
 	}
 	for(int i = 0; i < NUM_OSC; i++){
-		attack[i] = 0.0;
-		decay[i] = 0.0;
-		sustain[i] = 1.0;
-		release[i] = 0.05;
+		attack[i] = default_a;
+		decay[i] = default_d;
+		sustain[i] = default_s;
+		release[i] = default_r;
 	}
 }
 
@@ -84,45 +84,15 @@ tresult PLUGIN_API CRubidiumProcessor::setActive (TBool state)
 
 tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 {
-	if (data.inputParameterChanges)
-	{
+	if (data.inputParameterChanges){
 		int32 numParamsChanged = data.inputParameterChanges->getParameterCount ();
-		for (int32 index = 0; index < numParamsChanged; index++)
-		{
-			if (auto* paramQueue = data.inputParameterChanges->getParameterData (index))
-			{
+		for (int32 index = 0; index < numParamsChanged; index++){
+			if (auto* paramQueue = data.inputParameterChanges->getParameterData (index)){
 				Vst::ParamValue value;
 				int32 sampleOffset;
 				int32 numPoints = paramQueue->getPointCount ();
 				paramQueue->getPoint(numPoints - 1, sampleOffset, value);
-				switch (paramQueue->getParameterId ())
-				{
-				case osc_1:
-					osc_volume[0] = (float)value;
-					break;
-				case osc_2:
-					osc_volume[1] = (float)value;
-					break;
-				case osc_3:
-					osc_volume[2] = (float)value;
-					break;
-				case osc_4:
-					osc_volume[3] = (float)value;
-					break;
-				case osc_5:
-					osc_volume[4] = (float)value;
-					break;
-				case osc_6:
-					osc_volume[5] = (float)value;
-					break;
-				case osc_7:
-					osc_volume[6] = (float)value;
-					break;
-				case osc_8:
-					osc_volume[7] = (float)value;
-					break;
-				}
-				
+				osc_volume[paramQueue->getParameterId()] = (float)value;
 			}
 		}
 	}
