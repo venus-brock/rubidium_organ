@@ -18,50 +18,7 @@
 */
 
 #pragma once
-/*
-enum{
-	osc_1 = 0,
-	osc_2 = 1,
-	osc_3 = 2,
-	osc_4 = 3,
-	osc_5 = 4,
-	osc_6 = 5,
-	osc_7 = 6,
-	osc_8 = 7,
-	osc_1_a = 8,
-	osc_2_a = 9,
-	osc_3_a = 10,
-	osc_4_a = 11,
-	osc_5_a = 12,
-	osc_6_a = 13,
-	osc_7_a = 14,
-	osc_8_a = 15,
-	osc_1_d = 16,
-	osc_2_d = 17,
-	osc_3_d = 18,
-	osc_4_d = 19,
-	osc_5_d = 20,
-	osc_6_d = 21,
-	osc_7_d = 22,
-	osc_8_d = 23,
-	osc_1_s = 24,
-	osc_2_s = 25,
-	osc_3_s = 26,
-	osc_4_s = 27,
-	osc_5_s = 28,
-	osc_6_s = 29,
-	osc_7_s = 30,
-	osc_8_s = 31,
-	osc_1_r = 32,
-	osc_2_r = 33,
-	osc_3_r = 34,
-	osc_4_r = 35,
-	osc_5_r = 36,
-	osc_6_r = 37,
-	osc_7_r = 38,
-	osc_8_r = 39
-};
-*/
+
 #define default_osc_1 0.8
 #define default_osc_2 0.4
 #define default_osc_3 0.2
