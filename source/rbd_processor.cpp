@@ -84,15 +84,27 @@ tresult PLUGIN_API CRubidiumProcessor::setActive (TBool state)
 
 tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
 {
-	if (data.inputParameterChanges){
-		int32 numParamsChanged = data.inputParameterChanges->getParameterCount ();
-		for (int32 index = 0; index < numParamsChanged; index++){
-			if (auto* paramQueue = data.inputParameterChanges->getParameterData (index)){
+	if(data.inputParameterChanges){
+		int32 num_params = data.inputParameterChanges->getParameterCount();
+		for(int i = 0; i < num_params; i++){
+			if(auto* param_queue = data.inputParameterChanges->getParameterData(i)){
 				Vst::ParamValue value;
-				int32 sampleOffset;
-				int32 numPoints = paramQueue->getPointCount ();
-				paramQueue->getPoint(numPoints - 1, sampleOffset, value);
-				osc_volume[paramQueue->getParameterId()] = (float)value;
+				int32 sample_offset;
+				int32 num_points = param_queue->getPointCount();
+				param_queue->getPoint(num_points - 1, sample_offset, value);
+				int param_id = param_queue->getParameterId();
+				if(param_id < NUM_OSC){
+					osc_volume[param_id] = (float)value;
+				} else if(param_id < 2 * NUM_OSC){
+					attack[param_id - NUM_OSC] = (float)value;
+				} else if(param_id < 3 * NUM_OSC){
+					decay[param_id - 2 * NUM_OSC] = (float)value;
+				} else if(param_id < 4 * NUM_OSC){
+					sustain[param_id - 3 * NUM_OSC] = (float)value;
+				} else{
+					release[param_id - 4 * NUM_OSC] = (float)value;
+				}
+				osc_volume[param_queue->getParameterId()] = (float)value;
 			}
 		}
 	}

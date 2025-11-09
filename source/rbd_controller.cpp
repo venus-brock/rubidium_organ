@@ -45,12 +45,28 @@ tresult PLUGIN_API CRubidiumController::initialize (FUnknown* context)
 		u"osc_1_r", u"osc_2_r", u"osc_3_r", u"osc_4_r", u"osc_5_r", u"osc_6_r", u"osc_7_r", u"osc_8_r"
 	};
 
-	float default_osc_volumes[8] = {
+	float default_osc_volumes[NUM_OSC] = {
 	    default_osc_1, default_osc_2, default_osc_3, default_osc_4, default_osc_5, default_osc_6, default_osc_7, default_osc_8
 	};
 
-	for(int i = 0; i < 8; i++){
+	for(int i = 0; i < NUM_OSC; i++){
 		parameters.addParameter(param_names[i], nullptr, 0, default_osc_volumes[i], Vst::ParameterInfo::kCanAutomate, i);
+	}
+
+	for(int i = 0; i < NUM_OSC; i++){
+		parameters.addParameter(param_names[i + NUM_OSC], nullptr, 0, default_a, Vst::ParameterInfo::kCanAutomate, i + NUM_OSC);
+	}
+
+	for(int i = 0; i < NUM_OSC; i++){
+		parameters.addParameter(param_names[i + 2 * NUM_OSC], nullptr, 0, default_d, Vst::ParameterInfo::kCanAutomate, i + 2 * NUM_OSC);
+	}
+
+	for(int i = 0; i < NUM_OSC; i++){
+		parameters.addParameter(param_names[i + 3 * NUM_OSC], nullptr, 0, default_s, Vst::ParameterInfo::kCanAutomate, i + 3 * NUM_OSC);
+	}
+
+	for(int i = 0; i < NUM_OSC; i++){
+		parameters.addParameter(param_names[i + 4 * NUM_OSC], nullptr, 0, default_r, Vst::ParameterInfo::kCanAutomate, i + 4 * NUM_OSC);
 	}
 
 	return result;
