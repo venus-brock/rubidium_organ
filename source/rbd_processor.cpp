@@ -104,7 +104,6 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
                 } else{
                     release[param_id - 4 * NUM_OSC] = (float)value;
                 }
-                osc_volume[param_queue->getParameterId()] = (float)value;
             }
         }
     }
