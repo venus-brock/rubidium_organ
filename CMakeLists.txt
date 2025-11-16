@@ -59,6 +59,6 @@ target_link_libraries(Rubidium
 
 smtg_target_add_plugin_resources(Rubidium
     RESOURCES
-	"resource/rbd_editor.uidesc"
-	"resource/rbd_bg.png"
+        "resource/rbd_editor.uidesc"
+        "resource/rbd_bg.png"
 )
