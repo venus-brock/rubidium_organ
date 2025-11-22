@@ -59,38 +59,38 @@
             <view class="CSlider" origin="43, 229" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_6"/>
             <view class="CSlider" origin="43, 267" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_7"/>
             <view class="CSlider" origin="43, 305" size="100, 6" orientation="horizontal" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_8"/>
-            <view class="CSlider" origin="11, 58" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_1_a"/>
-            <view class="CSlider" origin="11, 96" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_2_a"/>
-            <view class="CSlider" origin="11, 134" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_3_a"/>
-            <view class="CSlider" origin="11, 172" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_4_a"/>
-            <view class="CSlider" origin="11, 210" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_5_a"/>
-            <view class="CSlider" origin="11, 248" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_6_a"/>
-            <view class="CSlider" origin="11, 286" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_7_a"/>
-            <view class="CSlider" origin="11, 324" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_8_a"/>
-            <view class="CSlider" origin="21, 58" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_1_d"/>
-            <view class="CSlider" origin="21, 96" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_2_d"/>
-            <view class="CSlider" origin="21, 134" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_3_d"/>
-            <view class="CSlider" origin="21, 172" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_4_d"/>
-            <view class="CSlider" origin="21, 210" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_5_d"/>
-            <view class="CSlider" origin="21, 248" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_6_d"/>
-            <view class="CSlider" origin="21, 286" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_7_d"/>
-            <view class="CSlider" origin="21, 324" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_8_d"/>
-            <view class="CSlider" origin="31, 58" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_1_s"/>
-            <view class="CSlider" origin="31, 96" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_2_s"/>
-            <view class="CSlider" origin="31, 134" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_3_s"/>
-            <view class="CSlider" origin="31, 172" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_4_s"/>
-            <view class="CSlider" origin="31, 210" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_5_s"/>
-            <view class="CSlider" origin="31, 248" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_6_s"/>
-            <view class="CSlider" origin="31, 286" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_7_s"/>
-            <view class="CSlider" origin="31, 324" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_8_s"/>
-            <view class="CSlider" origin="41, 58" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_1_r"/>
-            <view class="CSlider" origin="41, 96" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_2_r"/>
-            <view class="CSlider" origin="41, 134" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_3_r"/>
-            <view class="CSlider" origin="41, 172" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_4_r"/>
-            <view class="CSlider" origin="41, 210" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_5_r"/>
-            <view class="CSlider" origin="41, 248" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_6_r"/>
-            <view class="CSlider" origin="41, 286" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_7_r"/>
-            <view class="CSlider" origin="41, 324" size="6, 12" orientation="vertical" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_8_r"/>
+            <view class="CSlider" origin="11, 58" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_1_a"/>
+            <view class="CSlider" origin="11, 96" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_2_a"/>
+            <view class="CSlider" origin="11, 134" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_3_a"/>
+            <view class="CSlider" origin="11, 172" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_4_a"/>
+            <view class="CSlider" origin="11, 210" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_5_a"/>
+            <view class="CSlider" origin="11, 248" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_6_a"/>
+            <view class="CSlider" origin="11, 286" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_7_a"/>
+            <view class="CSlider" origin="11, 324" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_8_a"/>
+            <view class="CSlider" origin="21, 58" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_1_d"/>
+            <view class="CSlider" origin="21, 96" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_2_d"/>
+            <view class="CSlider" origin="21, 134" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_3_d"/>
+            <view class="CSlider" origin="21, 172" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_4_d"/>
+            <view class="CSlider" origin="21, 210" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_5_d"/>
+            <view class="CSlider" origin="21, 248" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_6_d"/>
+            <view class="CSlider" origin="21, 286" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_7_d"/>
+            <view class="CSlider" origin="21, 324" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_8_d"/>
+            <view class="CSlider" origin="31, 58" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_1_s"/>
+            <view class="CSlider" origin="31, 96" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_2_s"/>
+            <view class="CSlider" origin="31, 134" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_3_s"/>
+            <view class="CSlider" origin="31, 172" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_4_s"/>
+            <view class="CSlider" origin="31, 210" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_5_s"/>
+            <view class="CSlider" origin="31, 248" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_6_s"/>
+            <view class="CSlider" origin="31, 286" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_7_s"/>
+            <view class="CSlider" origin="31, 324" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_8_s"/>
+            <view class="CSlider" origin="41, 58" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_1_r"/>
+            <view class="CSlider" origin="41, 96" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_2_r"/>
+            <view class="CSlider" origin="41, 134" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_3_r"/>
+            <view class="CSlider" origin="41, 172" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_4_r"/>
+            <view class="CSlider" origin="41, 210" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_5_r"/>
+            <view class="CSlider" origin="41, 248" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_6_r"/>
+            <view class="CSlider" origin="41, 286" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_7_r"/>
+            <view class="CSlider" origin="41, 324" size="6, 12" orientation="vertical" reverse-orientation="false" draw-frame="true" draw-value="true" draw-value-color="#FFFFFFFF" control-tag="osc_8_r"/>
         </view>
     </template>
 </vstgui-ui-description>
