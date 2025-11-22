@@ -1,9 +1,9 @@
 ![](logo.png)
 
 Rubidium is a simple additive synthesizer plugin using VST3. Rubidium is still very early in development
-and thus is missing many key features, namely fully featured ADSR envelopes, customizable intervals between
-oscillators, and support for DAW defined presets. If you have any features that you would like to see in
-rubidium, feel free to create an issue with the "enhancement" tag.
+and thus is missing many key features, namely customizable intervals between oscillators, support for DAW
+defined presets, etc. If you have any features that you would like to see in rubidium, feel free to create
+an issue with the "enhancement" tag.
 
 ## Building from source
 
