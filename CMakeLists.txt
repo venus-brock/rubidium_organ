@@ -31,7 +31,7 @@ smtg_target_configure_version_file(Rubidium)
 
 if(SMTG_MAC)
     smtg_target_set_bundle(Rubidium
-        BUNDLE_IDENTIFIER com.venusbrock.vst3.rubidium
+        BUNDLE_IDENTIFIER ca.venusmusic.rdbvst3
         COMPANY_NAME "Venus Brock"
     )
     smtg_target_set_debug_executable(Rubidium
