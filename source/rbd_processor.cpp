@@ -230,12 +230,47 @@ tresult PLUGIN_API CRubidiumProcessor::canProcessSampleSize (int32 symbolicSampl
 
 tresult PLUGIN_API CRubidiumProcessor::setState (IBStream* state)
 {
+    if(!state){
+        return kResultFalse;
+    }
 
+    IBStreamer streamer(state, kLittleEndian);
+    for(int i = 0; i < NUM_OSC; i++){
+        float param = 0;
+        if(streamer.readFloat(param) == false){
+            return kResultFalse;
+        }
+        osc_volume[i] = param;
+        if(streamer.readFloat(param) == false){
+            return kResultFalse;
+        }
+        attack[i] = pow(param, 2);
+        if(streamer.readFloat(param) == false){
+            return kResultFalse;
+        }
+        decay[i] = pow(param, 2);
+        if(streamer.readFloat(param) == false){
+            return kResultFalse;
+        }
+        sustain[i] = param;
+        if(streamer.readFloat(param) == false){
+            return kResultFalse;
+        }
+        release[i] = pow(param, 2);
+    }
     return kResultOk;
 }
 
 tresult PLUGIN_API CRubidiumProcessor::getState (IBStream* state)
 {
+    IBStreamer streamer(state, kLittleEndian);
+    for(int i = 0; i < NUM_OSC; i++){
+        streamer.writeFloat(osc_volume[i]);
+        streamer.writeFloat(sqrt(attack[i]));
+        streamer.writeFloat(sqrt(decay[i]));
+        streamer.writeFloat(sustain[i]);
+        streamer.writeFloat(sqrt(release[i]));
+    }
     return kResultOk;
 }
 

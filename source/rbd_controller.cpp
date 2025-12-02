@@ -79,6 +79,22 @@ tresult PLUGIN_API CRubidiumController::terminate ()
 
 tresult PLUGIN_API CRubidiumController::setComponentState (IBStream* state)
 {    
+    if(!state){
+        return kResultFalse;
+    }
+
+    IBStreamer streamer(state, kLittleEndian);
+    for(int i = 0; i < NUM_OSC; i++){
+        float val = 0;
+        for(int j = 0; j < 5; j++){
+            if(streamer.readFloat(val) == false){
+                return kResultFalse;
+            }
+            if(auto param = parameters.getParameter(i + j * NUM_OSC)){
+                param->setNormalized(val);
+            }
+        }
+    }
     return kResultOk;
 }
 
