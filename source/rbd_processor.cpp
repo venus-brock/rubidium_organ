@@ -45,10 +45,12 @@ CRubidiumProcessor::CRubidiumProcessor ()
         note_on[i] = false;
     }
     for(int i = 0; i < NUM_OSC; i++){
-        attack[i] = pow(default_a, 2);
-        decay[i] = pow(default_d, 2);
-        sustain[i] = default_s;
-        release[i] = pow(default_r, 2);
+        osc_volume[i] = osc_volume_defaults[i];
+        attack[i] = pow(adsr_defaults[0], 2);
+        decay[i] = pow(adsr_defaults[1], 2);
+        sustain[i] = adsr_defaults[2];
+        release[i] = pow(adsr_defaults[3], 2);
+        interval_ratios[i] = interval_defaults[i];
     }
 }
 
@@ -101,8 +103,10 @@ tresult PLUGIN_API CRubidiumProcessor::process (Vst::ProcessData& data)
                     decay[param_id - 2 * NUM_OSC] = pow((float)value, 2);
                 } else if(param_id < 4 * NUM_OSC){
                     sustain[param_id - 3 * NUM_OSC] = (float)value;
-                } else{
+                } else if(param_id < 5 * NUM_OSC){
                     release[param_id - 4 * NUM_OSC] = pow((float)value, 2);
+                } else{
+                    interval_ratios[param_id - 5 * NUM_OSC] = 1 / (float)value;
                 }
             }
         }

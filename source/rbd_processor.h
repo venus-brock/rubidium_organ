@@ -51,10 +51,10 @@ public:
     Steinberg::tresult PLUGIN_API getState (Steinberg::IBStream* state) SMTG_OVERRIDE;
 
 protected:
-    float osc_volume[NUM_OSC] = {default_osc_1, default_osc_2, default_osc_3, default_osc_4, default_osc_5, default_osc_6, default_osc_7, default_osc_8};
+    float osc_volume[NUM_OSC];
     float phase[NUM_OSC][MAX_POLYPHONY];
     float fund_freq[MAX_POLYPHONY];
-    float interval_ratios[NUM_OSC] = {1, 2, 3, 4, 6, 8, 10, 12};
+    float interval_ratios[NUM_OSC];
 
     // 0 - attack
     // 1 - decay

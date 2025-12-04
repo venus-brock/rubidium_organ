@@ -19,17 +19,14 @@
 
 #pragma once
 
-#define default_osc_1 0.8
-#define default_osc_2 0.4
-#define default_osc_3 0.2
-#define default_osc_4 0.0
-#define default_osc_5 0.0
-#define default_osc_6 0.0
-#define default_osc_7 0.0
-#define default_osc_8 0.0
-#define default_a 0.0
-#define default_d 0.0
-#define default_s 1.0
-#define default_r 0.1
 #define NUM_OSC 8
 #define MAX_POLYPHONY 16
+
+const float osc_volume_defaults[NUM_OSC] = {0.8, 0.4, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0};
+const float adsr_defaults[] = {0.0, 0.0, 1.0, 0.1};
+
+// the frequency of each oscillator for a given note is the fundamental frequency multiplied by the corresponding value in interval_ratios[].
+// these defaults, all being integers (besides the semantic ".0"), correspond with frequencies in the harmonic series.
+// 5, 7, 9, and 11 however are skipped, mimicking the first 8 drawbars of the typical Hammond organ.
+// Unlike the Hammond organ, the first oscillator is the fundamental by default.
+const float interval_defaults[NUM_OSC] = {1.0, 2.0, 3.0, 4.0, 6.0, 8.0, 10.0, 12.0};
