@@ -14,7 +14,7 @@
 *   You should have received a copy of the GNU General Public License
 *   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 *
-*    Contact me at venus_brock@venusmusic.ca
+*    Contact me at venus@brock-v.dev
 */
 
 #include "rbd_processor.h"
@@ -31,7 +31,7 @@ using namespace brock;
 
 BEGIN_FACTORY_DEF ("Venus Brock", 
                    "https://github.com/venus-brock", 
-                   "mailto:venus_brock@venusmusic.ca")
+                   "mailto:venus@brock-v.dev")
 
     DEF_CLASS2 (INLINE_UID_FROM_FUID(kCRubidiumProcessorUID),
                 PClassInfo::kManyInstances,             // cardinality
